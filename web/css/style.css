@@ -1,8 +1,9 @@
-
+/* Scroll suave entre secciones */
 html {
   scroll-behavior: smooth;
 }
 
+/* ===== PALETA LFNANNY ===== */
 :root {
   /* Colores principales */
   --blue-main: #264653;
@@ -23,16 +24,28 @@ html {
   --border-light: #D1D5DB;
 }
 
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+/* ===== GENERAL ===== */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--color-text);
+  color: var(--text-main);
   line-height: 1.6;
+  background: white;
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--blue-main);
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--yellow-dark);
 }
 
 .container {
@@ -41,12 +54,12 @@ a {
   margin: auto;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .header {
   position: sticky;
   top: 0;
   background: white;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-light);
   z-index: 1000;
 }
 
@@ -57,20 +70,20 @@ a {
   padding: 15px 0;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
+.logo img {
+  height: 40px;
 }
 
 .nav a {
   margin-left: 20px;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
   padding: 120px 0 80px;
-  background: var(--color-primary);
+  background: var(--blue-main);
   color: white;
   text-align: center;
 }
@@ -78,6 +91,7 @@ a {
 .hero h1 {
   font-size: 2.2rem;
   margin-bottom: 20px;
+  color: var(--yellow-main);
 }
 
 .hero p {
@@ -85,17 +99,28 @@ a {
   margin: auto;
 }
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 .section {
   padding: 80px 0;
 }
 
 .section-alt {
-  background: var(--color-secondary);
+  background: var(--blue-light);
 }
 
-.section h2 {
-  margin-bottom: 20px;
+/* Títulos con banda corporativa */
+.section-title {
+  display: inline-block;
+  background: var(--blue-main);
+  color: var(--yellow-main);
+  padding: 10px 22px;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  border-radius: 4px;
+}
+
+.section p {
+  color: var(--text-secondary);
 }
 
 .section ul {
@@ -107,15 +132,15 @@ a {
   margin-bottom: 10px;
 }
 
-/* CONTACT */
+/* ===== CONTACTO ===== */
 .email {
   margin-top: 15px;
   font-size: 1.1rem;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 .footer {
-  background: #111;
+  background: var(--blue-dark);
   color: white;
   padding: 30px 0;
   font-size: 0.9rem;
@@ -129,10 +154,14 @@ a {
 
 .footer-links a {
   margin-left: 15px;
+  color: var(--yellow-main);
+}
+
+.footer-links a:hover {
   color: white;
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
@@ -150,11 +179,4 @@ a {
     font-size: 1.8rem;
   }
 }
-  --color-primary: #2f80ed;
-  --color-secondary: #f2f4f8;
-  --color-text: #1f2933;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
+``
