@@ -117,3 +117,20 @@ app.*.symbols
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
+
+
+# Web build / artefactos
+web/dist/
+web/build/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Entornos locales
+.env
+.env.local
+
+# IDEs (opcional)
+.vscode/
+.idea/
