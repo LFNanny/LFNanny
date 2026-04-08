@@ -2,8 +2,27 @@
 html {
   scroll-behavior: smooth;
 }
-:root {:0;
+
+:root {
+  /* Colores principales */
+  --blue-main: #264653;
+  --yellow-main: #F4C430;
+  --text-main: #1F2937;
+
+  /* Azules secundarios */
+  --blue-light: #E9EFF2;
+  --blue-medium: #3A5F73;
+  --blue-dark: #1F3A44;
+
+  /* Amarillos secundarios */
+  --yellow-light: #FFF3C2;
+  --yellow-dark: #E0B000;
+
+  /* Neutros */
+  --text-secondary: #4B5563;
+  --border-light: #D1D5DB;
 }
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;
