@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LFNanny · Conecta familias y niñeras de confianza</title>
-
+  <title>LFNanny · Conectando familias y niñeras de confianza</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
   <!-- HEADER / MENU -->
-  <header class="header">
+  <header class="header" id="site-header">
     <div class="container header-content">
       <div class="logo">
         <img src="assets/logo.png" alt="LFNanny logo" />
@@ -25,62 +25,112 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="inicio" class="hero">
-    <div class="container">
-      <h1>Conecta familias con niñeras de confianza</h1>
+  <!-- HERO con imagen de fondo -->
+  <section id="inicio" class="hero hero-image">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Conectando familias con niñeras de forma rápida, cómoda y segura</h1>
       <p>
-        LFNanny facilita el cuidado infantil de forma flexible, directa y segura,
-        priorizando la confianza y la cercanía.
+        LFNanny nace para facilitar la conexión entre familias y niñeras que conocen ellos o que conocen personas de su entorno.
       </p>
+      <p>
+        <h1>Niñeras que conoces, familias que conoces<h/1>
+      </p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="#contacto">Contactar</a>
+        <a class="btn-secondary" href="#como-funciona">Ver cómo funciona</a>
+      </div>
     </div>
   </section>
 
-  <!-- COMO FUNCIONA -->
+  <!-- CÓMO FUNCIONA (texto + tarjetas + imagen lateral) -->
   <section id="como-funciona" class="section">
-    <div class="container">
-      <h2 class="section-title">Cómo funciona</h2>
-      <p>
-        Las familias publican una solicitud indicando horario aproximado y ubicación.
-        Las niñeras reciben las solicitudes que encajan con su perfil y deciden si aceptar.
-      </p>
-      <p>
-        La dirección exacta solo se comparte cuando ambas partes están de acuerdo.
-      </p>
+    <div class="container split">
+      <div class="split-text">
+        <h2 class="section-title">Cómo funciona</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>1) Conexión</h3>
+            <p>La app te conecta con todos tus contactos de teléfono guardados de los padres y niñeras registrados en la plataforma.</p>
+          </div>
+          <div class="card">
+            <h3>2) Solicitud</h3>
+            <p>Las familias crean una solicitud de niñera y automáticamente salta el aviso a sus niñeras guardadas en favoritos.</p>
+          </div>
+          <div class="card">
+            <h3>3) Inteligente</h3>
+            <p>Si ninguna de las niñeras que tu conoces está disponible, te pone en contacto automáticamente con niñeras que conocen otros padres de tu red de contactos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-media">
+        <img class="media-image" src="assets/movil.jpg" alt="Uso de la app en el móvil" />
+      </div>
     </div>
   </section>
 
-  <!-- FAMILIAS -->
+  <!-- FAMILIAS (alterno, imagen lateral) -->
   <section id="familias" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Para familias</h2>
+    <div class="container split split-reverse">
+      <div class="split-text">
+        <h2 class="section-title">Para familias</h2>
+        <ul class="bullets">
+          <li>Encuentra niñeras según cercanía y disponibilidad.</li>
+          <li>Prioriza a tus niñeras favoritas y contactos de confianza.</li>
+          <li>Comunicación directa, sin intermediarios.</li>
+          <li>Servicio de solicitud express (4horas o menos).</li>
+        </ul>
+      </div>
 
-      <!-- Imagen opcional -->
-      <!-- <img src="assets/familias.jpg" alt="Familias usando LFNanny" class="section-image"diarios ni pagos dentro de la app.</li>
-      </ul>
+      <div class="split-media">
+        <img class="media-image" src="assets/familia.jpg" alt="Familia" />
+      </div>
     </div>
   </section>
 
-  <!-- NIÑERAS -->
+  <!-- NIÑERAS (blanco, imagen lateral) -->
   <section id="ninieras" class="section">
-    <div class="container">
-      <h2 class="section-title">Para niñeras</h2>
+    <div class="container split">
+      <div class="split-text">
+        <h2 class="section-title">Para niñeras</h2>
+        <ul class="bullets">
+          <li>Recibe solo solicitudes que encajan contigo.</li>
+          <li>Libertad total para aceptar o rechazar servicios.</li>
+          <li>Control de tu disponibilidad sin penalizaciones.</li>
+          <li>Familias conocidas por tí o por tus conocidos</li>
+        </ul>
+      </div>
 
-      <!-- Imagen opcional -->
-      <!-- <img src="assets/ninieras.jpg" alt="Niñera usando la app LFNanny" class="sectionjan contigo.</li>
-        <li>Libertad total para aceptar o rechazar servicios.</li>
-        <li>Control de tu disponibilidad sin penalizaciones.</li>
-      </ul>
+      <div class="split-media">
+        <img class="media-image" src="assets/ninera.jpg" alt="Niñera" />
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE EXTRA (opcional pero queda muy bien) -->
+  <section class="section section-alt">
+    <div class="container feature-wide">
+      <div class="feature-wide-media">
+        <img class="media-image" src="assets/Niña_pintada.jpg" alt="Actividad infantil" />
+      </div>
+      <div class="feature-wide-text">
+        <h2 class="section-title">Confianza y sencillez</h2>
+        <p>
+          Diseñada para que familias y niñeras conecten de forma clara y sin fricciones:
+          información esencial, control y privacidad desde el primer momento.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="section section-alt">
+  <section id="contacto" class="section">
     <div class="container">
       <h2 class="section-title">Contacto</h2>
       <p>
-        Proyecto en desarrollo.  
-        Para cualquier consulta puedes escribirnos a:
+        Proyecto en desarrollo. Para cualquier consulta o sugerencia puedes escribirnos a:
       </p>
       <p class="email">
         <a href="mailto:info@lfnanny.com">info@lfnanny.com</a>
@@ -98,6 +148,24 @@
       </div>
     </div>
   </footer>
+
+  <!-- SCRIPT: logo grande al inicio, pequeño al hacer scroll (sin parpadeos) -->
+  <script>
+    const header = document.getElementById('site-header');
+    const SHRINK_Y = 140;
+    const EXPAND_Y = 60;
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+
+      if (!header.classList.contains('header-small') && y > SHRINK_Y) {
+        header.classList.add('header-small');
+      }
+      if (header.classList.contains('header-small') && y < EXPAND_Y) {
+        header.classList.remove('header-small');
+      }
+    });
+  </script>
 
 </body>
 </html>
