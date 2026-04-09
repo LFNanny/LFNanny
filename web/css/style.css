@@ -413,7 +413,7 @@ a:hover {
    Mostrar más parte de la imagen original
    ========================================================= */
 
-.media-image {
+media-image {
   width: 100%;
   max-width: 430px;
   height: 260px;
