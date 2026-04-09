@@ -418,6 +418,36 @@ a:hover {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
 }
 
+
+/* =========================================================
+   14) GRÁFICO DEL PROCESO (Cómo funciona)
+   ========================================================= */
+
+.process-graphic {
+  margin-top: 42px;
+  text-align: center;
+}
+
+.process-title {
+  margin-bottom: 18px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--blue-main);
+}
+
+.process-graphic-image {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+
 /* =========================================================
    14) CONTACTO
    ========================================================= */
