@@ -1,32 +1,47 @@
-html { scroll-behavior: smooth; }
+/* =========================================================
+   COMPORTAMIENTO GLOBAL
+   ========================================================= */
 
-/* ===== PALETA LFNANNY ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   PALETA DE COLORES · LFNANNY
+   ========================================================= */
+
 :root {
-  /* MARCA */
-  --blue-main: #264653;
-  --yellow-main: #F4C430;
-  --text-main: #1F2937;
-  
-  /* NEUTROS */
-  --blue-light: #E9EFF2;
-  --blue-dark: #1F3A44;
-  --text-secondary: #4B5563;
-  --border-light: #D1D5DB;
+  /* ---------- MARCA ---------- */
+  --blue-main: #264653;        /* Color base, confianza */
+  --yellow-main: #F4C430;      /* CTAs y llamadas a la acción */
+  --text-main: #1F2937;        /* Texto principal */
 
-  /* PERFIL PADRES */
+  /* ---------- NEUTROS ---------- */
+  --blue-light: #E9EFF2;       /* Fondos alternos */
+  --blue-dark: #1F3A44;        /* Footer / contraste */
+  --text-secondary: #4B5563;  /* Texto secundario */
+  --border-light: #D1D5DB;     /* Bordes suaves */
+
+  /* ---------- PERFIL PADRES ---------- */
   --parent-main: #2A9D8F;
   --parent-light: #E6F4F1;
   --parent-dark: #1F766C;
 
-  /* PERFIL NIÑERAS */
+  /* ---------- PERFIL NIÑERAS ---------- */
   --sitter-main: #6D5BD0;
   --sitter-light: #F0EEFB;
   --sitter-dark: #4B3CA6;
-
-
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* =========================================================
+   BASE TIPOGRÁFICA Y ELEMENTOS GENERALES
+   ========================================================= */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -35,8 +50,13 @@ body {
   background: #ffffff;
 }
 
-a { color: var(--blue-main); text-decoration: none; }
-a:hover { color: var(--yellow-main); }
+a {
+  color: var(--blue-main);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--yellow-main);
+}
 
 .container {
   width: 90%;
@@ -44,7 +64,10 @@ a:hover { color: var(--yellow-main); }
   margin: auto;
 }
 
-/* ===== HEADER ===== */
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .header {
   position: sticky;
   top: 0;
@@ -63,18 +86,21 @@ a:hover { color: var(--yellow-main); }
   transition: padding 0.25s ease;
 }
 
-/* logo grande */
+/* Logo */
 .logo img {
   height: 78px;
-  width: auto;
-  display: block;
   transition: height 0.25s ease;
 }
 
-/* shrink */
-.header-small .logo img { height: 48px; }
-.header-small .header-content { padding: 12px 0; }
-.header-small { box-shadow: 0 2px 10px rgba(0,0,0,0.10); }
+.header-small {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+}
+.header-small .logo img {
+  height: 48px;
+}
+.header-small .header-content {
+  padding: 12px 0;
+}
 
 .nav a {
   margin-left: 18px;
@@ -82,9 +108,14 @@ a:hover { color: var(--yellow-main); }
   font-weight: 600;
   color: var(--blue-main);
 }
-.nav a:hover { color: var(--yellow-main); }
+.nav a:hover {
+  color: var(--yellow-main);
+}
 
-/* ===== HERO con imagen ===== */
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
   padding: 120px 0 90px;
   text-align: center;
@@ -100,7 +131,7 @@ a:hover { color: var(--yellow-main); }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(38, 70, 83, 0.78); /* overlay azul corporativo */
+  background: rgba(38, 70, 83, 0.78);
 }
 
 .hero-content {
@@ -127,37 +158,52 @@ a:hover { color: var(--yellow-main); }
   flex-wrap: wrap;
 }
 
-/* botones */
-.btn-primary, .btn-secondary {
-  display: inline-block;
-  padding: 10px 16px;  /* más alto y más ancho */
-  font-size: 0.95rem;     /* texto un poco mayor */
-  border-radius: 8px; /* opcional: más “premium” */
-  font-weight: 700;
-  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
-}
+/* =========================================================
+   BOTONES
+   ========================================================= */
 
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
 
 .btn-primary {
   background: var(--yellow-main);
   color: var(--blue-main);
 }
-.btn-primary:hover { transform: translateY(-1px); background: #e7b81f; }
+.btn-primary:hover {
+  background: #e7b81f;
+  transform: translateY(-1px);
+}
 
 .btn-secondary {
   border: 2px solid var(--yellow-main);
   color: #ffffff;
 }
-.btn-secondary:hover { transform: translateY(-1px); background: rgba(244,196,48,0.12); }
+.btn-secondary:hover {
+  background: rgba(244,196,48,0.12);
+  transform: translateY(-1px);
+}
 
-/* ===== SECCIONES ===== */
+/* =========================================================
+   SECCIONES GENERALES
+   ========================================================= */
+
 .section {
   padding: 80px 0;
   background: #ffffff;
 }
 
-.section-alt { background: var(--blue-light); }
+.section-alt {
+  background: var(--blue-light);
+}
 
+/* Título base (marca) */
 .section-title {
   display: inline-block;
   background: var(--blue-main);
@@ -166,9 +212,39 @@ a:hover { color: var(--yellow-main); }
   margin-bottom: 28px;
   font-size: 1.4rem;
   border-radius: 6px;
+  font-weight: 600;
 }
 
-/* layout split (texto + imagen) */
+/* =========================================================
+   DIFERENCIACIÓN POR PERFIL (CLAVE)
+   ========================================================= */
+
+/* ----- PADRES ----- */
+.profile.parent {
+  background: var(--parent-light); /* detalle visual fino */
+}
+
+.profile.parent .section-title {
+  background: var(--parent-light);
+  color: var(--parent-dark);
+  border-left: 4px solid var(--parent-main);
+}
+
+/* ----- NIÑERAS ----- */
+.profile.sitter {
+  background: var(--sitter-light); /* detalle visual fino */
+}
+
+.profile.sitter .section-title {
+  background: var(--sitter-light);
+  color: var(--sitter-dark);
+  border-left: 4px solid var(--sitter-main);
+}
+
+/* =========================================================
+   LAYOUT SPLIT (TEXTO + IMAGEN)
+   ========================================================= */
+
 .split {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -182,14 +258,36 @@ a:hover { color: var(--yellow-main); }
 .split-reverse .split-text { order: 2; }
 .split-reverse .split-media { order: 1; }
 
-.split-text p,
 .section p,
-.section li { color: var(--text-secondary); }
+.section li {
+  color: var(--text-secondary);
+}
 
-.bullets { margin-top: 10px; padding-left: 18px; }
-.bullets li { margin-bottom: 10px; }
+/* =========================================================
+   LISTAS (BULLETS)
+   ========================================================= */
 
-/* tarjetas */
+.bullets {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.bullets li {
+  margin-bottom: 10px;
+}
+
+/* Bullet por perfil */
+.profile.parent .bullets li::marker {
+  color: var(--parent-main);
+}
+.profile.sitter .bullets li::marker {
+  color: var(--sitter-main);
+}
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -201,16 +299,24 @@ a:hover { color: var(--yellow-main); }
   background: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: 12px;
-  padding: 14px 14px;
+  padding: 14px;
 }
+
 .card h3 {
   color: var(--blue-main);
   font-size: 1.05rem;
   margin-bottom: 6px;
 }
-.card p { color: var(--text-secondary); font-size: 0.95rem; }
 
-/* imagenes */
+.card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   IMÁGENES
+   ========================================================= */
+
 .media-image {
   width: 100%;
   height: 320px;
@@ -220,19 +326,22 @@ a:hover { color: var(--yellow-main); }
   box-shadow: 0 10px 24px rgba(0,0,0,0.10);
 }
 
-/* bloque ancho extra */
-.feature-wide {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 28px;
-  align-items: center;
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.email {
+  margin-top: 18px;
+  font-size: 1.1rem;
+}
+.email a {
+  font-weight: 700;
 }
 
-/* ===== CONTACTO ===== */
-.email { margin-top: 18px; font-size: 1.1rem; }
-.email a { font-weight: 700; }
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
-/* ===== FOOTER ===== */
 .footer {
   background: var(--blue-dark);
   color: #ffffff;
@@ -250,27 +359,40 @@ a:hover { color: var(--yellow-main); }
   margin-left: 15px;
   color: var(--yellow-main);
 }
-.footer-links a:hover { color: #ffffff; }
+.footer-links a:hover {
+  color: #ffffff;
+}
 
-/* ===== RESPONSIVE ===== */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
 @media (max-width: 980px) {
-  .cards { grid-template-columns: 1fr; }
-  .media-image { height: 300px; }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .media-image {
+    height: 300px;
+  }
 }
 
 @media (max-width: 768px) {
-  .header-content { flex-direction: column; gap: 10px; }
-  .nav a { margin: 0 10px; }
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-  .logo img { height: 60px; }
-  .header-small .logo img { height: 46px; }
-
-  .split, .split-reverse, .feature-wide {
+  .split,
+  .split-reverse {
     grid-template-columns: 1fr;
   }
-  .split-reverse .split-text,
-  .split-reverse .split-media { order: initial; }
 
-  .hero { padding: 96px 0 70px; }
-  .hero h1 { font-size: 1.9rem; }
+  .hero {
+    padding: 96px 0 70px;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
 }
+``
