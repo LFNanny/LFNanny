@@ -407,14 +407,22 @@ a:hover {
   color: var(--text-secondary);
 }
 
-/* =========================================================
+
+* =========================================================
    13) IMÁGENES
+   Mostrar más parte de la imagen original
    ========================================================= */
 
 .media-image {
   width: 100%;
-  height: 320px;
-  object-fit: cover;
+  max-width: 430px;
+  height: 260px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  background: #ffffff;
   border-radius: 14px;
   border: 1px solid var(--border-light);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
