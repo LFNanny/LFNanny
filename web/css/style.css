@@ -1,5 +1,5 @@
 /* =========================================================
-   BASE GLOBAL
+   1) BASE GLOBAL
    ========================================================= */
 
 html {
@@ -13,7 +13,7 @@ html {
 }
 
 /* =========================================================
-   PALETA DE COLORES · LFNANNY
+   2) PALETA DE COLORES · LFNANNY
    ========================================================= */
 
 :root {
@@ -27,6 +27,7 @@ html {
   --blue-dark: #1F3A44;
   --text-secondary: #4B5563;
   --border-light: #D1D5DB;
+  --white: #FFFFFF;
 
   /* ---- PERFIL PADRES ---- */
   --parent-main: #2A9D8F;
@@ -40,20 +41,21 @@ html {
 }
 
 /* =========================================================
-   TIPOGRAFÍA Y ESTRUCTURA
+   3) TIPOGRAFÍA Y ESTRUCTURA GENERAL
    ========================================================= */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text-main);
   line-height: 1.6;
-  background: #ffffff;
+  background: var(--white);
 }
 
 a {
   color: var(--blue-main);
   text-decoration: none;
 }
+
 a:hover {
   color: var(--yellow-main);
 }
@@ -61,72 +63,91 @@ a:hover {
 .container {
   width: 90%;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* =========================================================
-   HEADER
+   4) HEADER
    ========================================================= */
 
 .header {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.96);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--border-light);
   backdrop-filter: blur(6px);
-  z-index: 1000;
   transition: box-shadow 0.25s ease;
 }
 
 .header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 22px 0;
   transition: padding 0.25s ease;
 }
 
+/* Logo en tamaño normal */
 .logo img {
+  display: block;
   height: 78px;
+  width: auto;
   transition: height 0.25s ease;
 }
 
+/* Header reducido al hacer scroll */
 .header-small {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
 }
+
 .header-small .logo img {
   height: 48px;
 }
+
 .header-small .header-content {
   padding: 12px 0;
 }
 
+/* Navegación */
 .nav a {
   margin-left: 18px;
-  font-weight: 600;
   font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--blue-main);
+}
+
+.nav a:hover {
+  color: var(--yellow-main);
 }
 
 /* =========================================================
-   HERO
+   5) HERO
    ========================================================= */
 
 .hero {
+  position: relative;
   padding: 120px 0 90px;
   text-align: center;
-  position: relative;
 }
 
+/* IMPORTANTE:
+   Si tu style.css está dentro de una carpeta /css,
+   deja ../assets/...
+   Si tu style.css está junto al index.html,
+   cambia a assets/...
+*/
 .hero-image {
   background-image: url("../assets/madre_con_hijo_sombra.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(38,70,83,0.78);
+  background: rgba(38, 70, 83, 0.78);
 }
 
 .hero-content {
@@ -135,129 +156,105 @@ a:hover {
 }
 
 .hero h1 {
+  margin-bottom: 18px;
   font-size: 2.3rem;
   color: var(--yellow-main);
-  margin-bottom: 18px;
 }
 
 .hero p {
-  color: #ffffff;
   max-width: 760px;
   margin: 0 auto 28px;
+  color: var(--white);
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 /* =========================================================
-   BOTONES (UN SOLO ESTILO)
+   6) BOTONES
+   Un mismo estilo base.
+   - Fuera de perfiles: estilo marca
+   - Dentro de perfiles: color del perfil
    ========================================================= */
 
 .btn-primary,
 .btn-secondary {
   display: inline-block;
-  padding: 10px 18px;
+  padding: 10px 16px;
   font-size: 0.95rem;
   font-weight: 700;
   border-radius: 8px;
   border: 2px solid transparent;
-  background: transparent;
-  transition: background 0.15s ease, transform 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
+/* Efecto hover común */
 .btn-primary:hover,
 .btn-secondary:hover {
   transform: translateY(-1px);
 }
 
-/* --- Botones por defecto (marca / hero) --- */
+/* Botón principal por defecto (marca) */
 .btn-primary {
   background: var(--yellow-main);
   color: var(--blue-main);
 }
+
 .btn-primary:hover {
   background: #e7b81f;
 }
 
+/* Botón secundario por defecto (marca) */
 .btn-secondary {
+  background: transparent;
   border-color: var(--yellow-main);
-  color: #ffffff;
+  color: var(--white);
 }
+
 .btn-secondary:hover {
-  background: rgba(244,196,48,0.15);
+  background: rgba(244, 196, 48, 0.15);
 }
 
 /* =========================================================
-   SECCIONES
+   7) SECCIONES GENERALES
    ========================================================= */
 
 .section {
   padding: 80px 0;
-  background: #ffffff;
+  background: var(--white);
 }
 
+/* Fondo alterno genérico */
 .section-alt {
   background: var(--blue-light);
 }
 
 /* =========================================================
-   TÍTULOS
+   8) TÍTULOS DE SECCIÓN
+   Base general = pastilla azul corporativa
    ========================================================= */
 
 .section-title {
   display: inline-block;
-  padding: 10px 22px;
   margin-bottom: 28px;
+  padding: 10px 22px;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 6px;
+  background: var(--blue-main);
+  color: var(--yellow-main);
 }
 
 /* =========================================================
-   PERFILES (AQUÍ ESTÁ LA CLAVE)
-   ========================================================= */
-
-/* ---- PADRES ---- */
-.profile.parent {
-  background: var(--parent-light);
-}
-
-.profile.parent .section-title {
-  background: var(--parent-light);
-  color: var(--parent-dark);
-  border-left: 4px solid var(--parent-main);
-}
-
-.profile.parent .btn-primary,
-.profile.parent .btn-secondary {
-  background: var(--parent-main);
-  color: #ffffff;
-}
-.profile.parent .btn-primary:hover,
-.profile.parent .btn-secondary:hover {
-  background: var(--parent-dark);
-}
-
-/* ---- NIÑERAS ---- */
-.profile.sitter {
-  background: var(--sitter-light);
-}
-
-.profile.sitter .section-title {
-  background: var(--sitter-light);
-  color: var(--sitter-dark);
-  border-left: 4px solid var(--sitter-main);
-}
-
-.profile.sitter .btn-primary,
-.profile.sitter .btn-secondary {
-  background: var(--sitter-main);
-  color: #ffffff;
-}
-.profile.sitter .btn-primary:hover,
-.profile.sitter .btn-secondary:hover {
-  background: var(--sitter-dark);
-}
-
-/* =========================================================
-   SPLIT LAYOUT
+   9) LAYOUT TIPO SPLIT (texto + imagen)
    ========================================================= */
 
 .split {
@@ -270,16 +267,93 @@ a:hover {
 .split-reverse {
   grid-template-columns: 1fr 1.2fr;
 }
-.split-reverse .split-text { order: 2; }
-.split-reverse .split-media { order: 1; }
 
+/* En reverse, intercambiamos visualmente texto e imagen */
+.split-reverse .split-text {
+  order: 2;
+}
+
+.split-reverse .split-media {
+  order: 1;
+}
+
+/* Texto general dentro de secciones */
 .section p,
 .section li {
   color: var(--text-secondary);
 }
 
 /* =========================================================
-   LISTAS
+   10) PERFILES (PADRES / NIÑERAS)
+   Aquí se aplica el color de tema a cada bloque.
+   ========================================================= */
+
+/* ---------- PADRES ---------- */
+
+/* Fondo suave del bloque */
+.profile.parent {
+  background: var(--parent-light);
+}
+
+/* Título del bloque en forma de pastilla verde */
+.profile.parent .section-title {
+  background: var(--parent-main);
+  color: var(--white);
+}
+
+/* Bullets del bloque */
+.profile.parent .bullets li::marker {
+  color: var(--parent-main);
+}
+
+/* Botones dentro del bloque */
+.profile.parent .btn-primary,
+.profile.parent .btn-secondary {
+  background: var(--parent-main);
+  color: var(--white);
+  border-color: var(--parent-main);
+}
+
+.profile.parent .btn-primary:hover,
+.profile.parent .btn-secondary:hover {
+  background: var(--parent-dark);
+  border-color: var(--parent-dark);
+}
+
+/* ---------- NIÑERAS ---------- */
+
+/* Fondo suave del bloque */
+.profile.sitter {
+  background: var(--sitter-light);
+}
+
+/* Título del bloque en forma de pastilla morada */
+.profile.sitter .section-title {
+  background: var(--sitter-main);
+  color: var(--white);
+}
+
+/* Bullets del bloque */
+.profile.sitter .bullets li::marker {
+  color: var(--sitter-main);
+}
+
+/* Botones dentro del bloque */
+.profile.sitter .btn-primary,
+.profile.sitter .btn-secondary {
+  background: var(--sitter-main);
+  color: var(--white);
+  border-color: var(--sitter-main);
+}
+
+.profile.sitter .btn-primary:hover,
+.profile.sitter .btn-secondary:hover {
+  background: var(--sitter-dark);
+  border-color: var(--sitter-dark);
+}
+
+/* =========================================================
+   11) LISTAS / BULLETS
    ========================================================= */
 
 .bullets {
@@ -291,15 +365,38 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.profile.parent .bullets li::marker {
-  color: var(--parent-main);
+/* =========================================================
+   12) CARDS (bloque "Cómo funciona")
+   ========================================================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 14px;
 }
-.profile.sitter .bullets li::marker {
-  color: var(--sitter-main);
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.card h3 {
+  margin-bottom: 6px;
+  font-size: 1.05rem;
+  color: var(--blue-main);
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
 }
 
 /* =========================================================
-   IMÁGENES
+   13) IMÁGENES
    ========================================================= */
 
 .media-image {
@@ -308,16 +405,29 @@ a:hover {
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid var(--border-light);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
 }
 
 /* =========================================================
-   FOOTER
+   14) BLOQUES DE CONTACTO
+   ========================================================= */
+
+.email {
+  margin-top: 18px;
+  font-size: 1.1rem;
+}
+
+.email a {
+  font-weight: 700;
+}
+
+/* =========================================================
+   15) FOOTER
    ========================================================= */
 
 .footer {
   background: var(--blue-dark);
-  color: #ffffff;
+  color: var(--white);
   padding: 30px 0;
 }
 
@@ -325,24 +435,70 @@ a:hover {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-links a {
+  margin-left: 15px;
+  color: var(--yellow-main);
+}
+
+.footer-links a:hover {
+  color: var(--white);
 }
 
 /* =========================================================
-   RESPONSIVE
+   16) RESPONSIVE · TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .media-image {
+    height: 300px;
+  }
+}
+
+/* =========================================================
+   17) RESPONSIVE · MÓVIL
    ========================================================= */
 
 @media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav a {
+    margin: 0 10px;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .header-small .logo img {
+    height: 46px;
+  }
+
   .split,
   .split-reverse {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    font-size: 1.9rem;
+  /* Restauramos el orden natural en móvil */
+  .split-reverse .split-text,
+  .split-reverse .split-media {
+    order: initial;
   }
 
-  .header-content {
-    flex-direction: column;
-    gap: 10px;
+  .hero {
+    padding: 96px 0 70px;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
   }
 }
