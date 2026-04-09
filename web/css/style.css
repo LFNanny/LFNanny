@@ -30,14 +30,18 @@ html {
   --white: #FFFFFF;
 
   /* ---- PERFIL PADRES ---- */
-  --parent-main: #2A9D8F;
-  --parent-light: #E6F4F1;
-  --parent-dark: #1F766C;
+
+   --parent-main: #3F8C7A;
+   --parent-light: #F2F8F6;
+   --parent-dark: #2F6C60;
+
 
   /* ---- PERFIL NIÑERAS ---- */
-  --sitter-main: #6D5BD0;
-  --sitter-light: #F0EEFB;
-  --sitter-dark: #4B3CA6;
+
+   --sitter-main: #6B5BBE;
+   --sitter-light: #F4F1FB;
+   --sitter-dark: #514492;
+
 }
 
 /* =========================================================
@@ -283,19 +287,28 @@ a:hover {
   color: var(--text-secondary);
 }
 
+
 /* =========================================================
    10) PERFILES (PADRES / NIÑERAS)
-   Aquí se aplica el color de tema a cada bloque.
+   Fondo por sección concreta + color de perfil en título,
+   bullets y botones
    ========================================================= */
+
+/* ---------- FONDOS DE LAS SECCIONES ---------- */
+
+/* Sección familias */
+#familias {
+  background: #ffffff;
+}
+
+/* Sección niñeras */
+#ninieras {
+  background: var(--blue-light);
+}
 
 /* ---------- PADRES ---------- */
 
-/* Fondo suave del bloque */
-.profile.parent {
-  background: var(--parent-light);
-}
-
-/* Título del bloque en forma de pastilla verde */
+/* Título del bloque */
 .profile.parent .section-title {
   background: var(--parent-main);
   color: var(--white);
@@ -322,12 +335,7 @@ a:hover {
 
 /* ---------- NIÑERAS ---------- */
 
-/* Fondo suave del bloque */
-.profile.sitter {
-  background: var(--sitter-light);
-}
-
-/* Título del bloque en forma de pastilla morada */
+/* Título del bloque */
 .profile.sitter .section-title {
   background: var(--sitter-main);
   color: var(--white);
@@ -351,6 +359,7 @@ a:hover {
   background: var(--sitter-dark);
   border-color: var(--sitter-dark);
 }
+
 
 /* =========================================================
    11) LISTAS / BULLETS
