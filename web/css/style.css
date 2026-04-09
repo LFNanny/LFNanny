@@ -408,21 +408,15 @@ a:hover {
 }
 
 
-* =========================================================
+
+/* =========================================================
    13) IMÁGENES
-   Mostrar más parte de la imagen original
    ========================================================= */
 
-media-image {
+.media-image {
   width: 100%;
-  max-width: 430px;
-  height: 260px;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  margin: 0 auto;
-  padding: 10px;
-  background: #ffffff;
+  height: 320px;
+  object-fit: cover;
   border-radius: 14px;
   border: 1px solid var(--border-light);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
