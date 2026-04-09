@@ -2,15 +2,28 @@ html { scroll-behavior: smooth; }
 
 /* ===== PALETA LFNANNY ===== */
 :root {
+  /* MARCA */
   --blue-main: #264653;
   --yellow-main: #F4C430;
   --text-main: #1F2937;
-
+  
+  /* NEUTROS */
   --blue-light: #E9EFF2;
   --blue-dark: #1F3A44;
-
   --text-secondary: #4B5563;
   --border-light: #D1D5DB;
+
+  /* PERFIL PADRES */
+  --parent-main: #2A9D8F;
+  --parent-light: #E6F4F1;
+  --parent-dark: #1F766C;
+
+  /* PERFIL NIÑERAS */
+  --sitter-main: #6D5BD0;
+  --sitter-light: #F0EEFB;
+  --sitter-dark: #4B3CA6;
+
+
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
