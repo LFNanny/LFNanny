@@ -19,29 +19,31 @@ html {
 :root {
   /* ---- MARCA ---- */
   --blue-main: #264653;
-  --yellow-main: #F4C430;
-  --text-main: #1F2937;
-
-  /* ---- NEUTROS ---- */
-  --blue-light: #E9EFF2;
   --blue-dark: #1F3A44;
+  --blue-light: #E9EFF2;
+  --yellow-main: #F4C430;
+
+  /* ---- TEXTO Y NEUTROS ---- */
+  --text-main: #1F2937;
   --text-secondary: #4B5563;
   --border-light: #D1D5DB;
   --white: #FFFFFF;
 
-  /* ---- PERFIL PADRES ---- */
-
-   --parent-main: #3F8C7A;
-   --parent-light: #F2F8F6;
-   --parent-dark: #2F6C60;
-
+  /* ---- PERFIL FAMILIAS ---- */
+  --parent-main: #2A9D8F;
+  --parent-light: #EDF8F6;
+  --parent-dark: #1F766C;
 
   /* ---- PERFIL NIÑERAS ---- */
+  --sitter-main: #6D5BD0;
+  --sitter-light: #F3F1FC;
+  --sitter-dark: #4B3CA6;
 
-   --sitter-main: #6B5BBE;
-   --sitter-light: #F4F1FB;
-   --sitter-dark: #514492;
-
+  /* ---- FONDOS DE SECCIÓN ---- */
+  --section-how: #F7F9FA;
+  --section-families: #EDF8F6;
+  --section-sitters: #F3F1FC;
+  --section-contact: #EEF3F5;
 }
 
 /* =========================================================
@@ -92,7 +94,7 @@ a:hover {
   transition: padding 0.25s ease;
 }
 
-/* Logo en tamaño normal */
+/* Logo normal */
 .logo img {
   display: block;
   height: 78px;
@@ -135,11 +137,9 @@ a:hover {
   text-align: center;
 }
 
-/* IMPORTANTE:
-   Si tu style.css está dentro de una carpeta /css,
-   deja ../assets/...
-   Si tu style.css está junto al index.html,
-   cambia a assets/...
+/* Si tu CSS está en /css/style.css, esta ruta está bien.
+   Si style.css está junto a index.html, cambia a:
+   url("assets/madre_con_hijo_sombra.jpg")
 */
 .hero-image {
   background-image: url("../assets/madre_con_hijo_sombra.jpg");
@@ -180,9 +180,8 @@ a:hover {
 
 /* =========================================================
    6) BOTONES
-   Un mismo estilo base.
-   - Fuera de perfiles: estilo marca
-   - Dentro de perfiles: color del perfil
+   Mismo estilo base para todos.
+   Texto siempre en blanco.
    ========================================================= */
 
 .btn-primary,
@@ -193,6 +192,7 @@ a:hover {
   font-weight: 700;
   border-radius: 8px;
   border: 2px solid transparent;
+  color: var(--white);
   transition:
     transform 0.15s ease,
     background 0.15s ease,
@@ -200,31 +200,32 @@ a:hover {
     border-color 0.15s ease;
 }
 
-/* Efecto hover común */
+/* Hover común */
 .btn-primary:hover,
 .btn-secondary:hover {
   transform: translateY(-1px);
 }
 
-/* Botón principal por defecto (marca) */
+/* Botón principal por defecto = azul corporativo */
 .btn-primary {
-  background: var(--yellow-main);
-  color: var(--blue-main);
+  background: var(--blue-main);
+  color: var(--white);
 }
 
 .btn-primary:hover {
-  background: #e7b81f;
+  background: var(--blue-dark);
 }
 
-/* Botón secundario por defecto (marca) */
+/* Botón secundario por defecto = transparente con borde blanco
+   pensado sobre fondos oscuros como el hero */
 .btn-secondary {
   background: transparent;
-  border-color: var(--yellow-main);
+  border-color: var(--white);
   color: var(--white);
 }
 
 .btn-secondary:hover {
-  background: rgba(244, 196, 48, 0.15);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* =========================================================
@@ -236,9 +237,24 @@ a:hover {
   background: var(--white);
 }
 
-/* Fondo alterno genérico */
-.section-alt {
-  background: var(--blue-light);
+/* Fondo específico por sección */
+#como-funciona {
+  background: var(--section-how);
+}
+
+#familias {
+  background: var(--section-families);
+}
+
+#ninieras {
+  background: var(--section-sitters);
+}
+
+/* Si tienes una sección de contacto y quieres darle otro fondo,
+   añade id="contacto" en HTML y quedará lista:
+*/
+#contacto {
+  background: var(--section-contact);
 }
 
 /* =========================================================
@@ -254,7 +270,7 @@ a:hover {
   font-weight: 700;
   border-radius: 6px;
   background: var(--blue-main);
-  color: var(--yellow-main);
+  color: var(--white);
 }
 
 /* =========================================================
@@ -281,45 +297,31 @@ a:hover {
   order: 1;
 }
 
-/* Texto general dentro de secciones */
+/* Texto general */
 .section p,
 .section li {
   color: var(--text-secondary);
 }
 
-
 /* =========================================================
-   10) PERFILES (PADRES / NIÑERAS)
-   Fondo por sección concreta + color de perfil en título,
-   bullets y botones
+   10) PERFILES (FAMILIAS / NIÑERAS)
+   Color del perfil aplicado a título, bullets y botones
    ========================================================= */
 
-/* ---------- FONDOS DE LAS SECCIONES ---------- */
+/* ---------- FAMILIAS ---------- */
 
-/* Sección familias */
-#familias {
-  background: #ffffff;
-}
-
-/* Sección niñeras */
-#ninieras {
-  background: var(--blue-light);
-}
-
-/* ---------- PADRES ---------- */
-
-/* Título del bloque */
+/* Pastilla del título */
 .profile.parent .section-title {
   background: var(--parent-main);
   color: var(--white);
 }
 
-/* Bullets del bloque */
+/* Bullets */
 .profile.parent .bullets li::marker {
   color: var(--parent-main);
 }
 
-/* Botones dentro del bloque */
+/* Botones del bloque */
 .profile.parent .btn-primary,
 .profile.parent .btn-secondary {
   background: var(--parent-main);
@@ -335,18 +337,18 @@ a:hover {
 
 /* ---------- NIÑERAS ---------- */
 
-/* Título del bloque */
+/* Pastilla del título */
 .profile.sitter .section-title {
   background: var(--sitter-main);
   color: var(--white);
 }
 
-/* Bullets del bloque */
+/* Bullets */
 .profile.sitter .bullets li::marker {
   color: var(--sitter-main);
 }
 
-/* Botones dentro del bloque */
+/* Botones del bloque */
 .profile.sitter .btn-primary,
 .profile.sitter .btn-secondary {
   background: var(--sitter-main);
@@ -359,7 +361,6 @@ a:hover {
   background: var(--sitter-dark);
   border-color: var(--sitter-dark);
 }
-
 
 /* =========================================================
    11) LISTAS / BULLETS
@@ -418,7 +419,7 @@ a:hover {
 }
 
 /* =========================================================
-   14) BLOQUES DE CONTACTO
+   14) CONTACTO
    ========================================================= */
 
 .email {
@@ -497,7 +498,7 @@ a:hover {
     grid-template-columns: 1fr;
   }
 
-  /* Restauramos el orden natural en móvil */
+  /* Restaurar orden natural en móvil */
   .split-reverse .split-text,
   .split-reverse .split-media {
     order: initial;
