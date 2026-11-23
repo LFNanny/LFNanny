@@ -1,0 +1,43 @@
+name: Security & Privacy Gate
+
+on:
+  push:
+    branches: [ main, gh-pages ]
+  pull_request:
+    branches: [ main, gh-pages ]
+
+jobs:
+  leak-and-file-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Block sensitive file extensions and internal folders
+        run: |
+          FORBIDDEN=$(git ls-files | grep -iE '(\.(pdf|docx?|xlsx?|pptx?|env|pem|key|p12|jks|keystore|sqlite|db|sql|zip|tar|gz|bak)$|(^|/)\.DS_Store$|(^|/)(docs|mobile)/|(^|/)(google-services\.json|GoogleService-Info\.plist|service-account.*\.json)$)' || true)
+          if [ -n "$FORBIDDEN" ]; then
+            echo "ERROR: Archivos o carpetas prohibidos detectados en el repositorio:"
+            echo "$FORBIDDEN"
+            exit 1
+          fi
+
+      - name: Install Gitleaks
+        run: |
+          GITLEAKS_VERSION="8.30.1"
+          curl -sSL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" -o gitleaks.tar.gz
+          tar -xzf gitleaks.tar.gz gitleaks
+          sudo mv gitleaks /usr/local/bin/gitleaks
+          rm -f gitleaks.tar.gz
+
+      - name: Run Gitleaks (Secrets & PII)
+        run: |
+          if [ -f .gitleaks.toml ]; then
+            gitleaks detect --source . --config .gitleaks.toml --verbose --redact
+          else
+            gitleaks detect --source . --verbose --redact
+          fi

@@ -1,0 +1,28 @@
+title = "LFNanny Security & Privacy Rules"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "spanish-dni-nie"
+description = "Detecta DNI o NIE español en texto plano"
+regex = '''\b([0-9]{8}[A-HJ-NP-TV-Z]|[XYZ][0-9]{7}[A-HJ-NP-TV-Z])\b'''
+tags = ["pii", "dni"]
+
+[[rules]]
+id = "spanish-iban"
+description = "Detecta cuentas bancarias IBAN españolas en texto plano"
+regex = '''\bES[0-9]{2}[\s-]?[0-9]{4}[\s-]?[0-9]{4}[\s-]?[0-9]{2}[\s-]?[0-9]{10}\b'''
+tags = ["pii", "iban"]
+
+[[rules]]
+id = "spanish-phone-number"
+description = "Detecta números de teléfono españoles con prefijo +34"
+regex = '''\+34[\s.-]?[6789][0-9]{2}[\s.-]?[0-9]{3}[\s.-]?[0-9]{3}\b'''
+tags = ["pii", "phone"]
+
+[[rules]]
+id = "personal-email-address"
+description = "Evita publicar correos personales en el repositorio corporativo"
+regex = '''(?i)\b[A-Za-z0-9._%+-]+@(?:gmail|hotmail|outlook|live|yahoo|icloud)\.[a-z]{2,}\b'''
+tags = ["pii", "email"]
